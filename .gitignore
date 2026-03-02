@@ -1,0 +1,37 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+my_env/
+portifolio_env/
+venv/
+env/
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Database (if local SQLite)
+*.sqlite3
+
+# SSL / certificate files
+*.pem
+
+# Node modules (for frontend)
+frontend/node_modules/
+
+# Build folders (if React/Vite)
+frontend/build/
+frontend/dist/
