@@ -2,9 +2,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 import os
-from .database import engine, Base
-from .routers import users, skills, journey, certifications, projects, contact
-from . import models
+from database import engine, Base
+from routers import users, skills, journey, certifications, projects, contact
+import models
 
 # Create database tables
 models.Base.metadata.create_all(bind=engine)

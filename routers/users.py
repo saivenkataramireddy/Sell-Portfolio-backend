@@ -4,8 +4,8 @@ from datetime import timedelta
 import shutil
 import os
 import uuid
-from ..database import get_db
-from .. import models, schemas, auth
+from database import get_db
+import models, schemas, auth
 
 router = APIRouter(prefix="/api/users", tags=["users"])
 
