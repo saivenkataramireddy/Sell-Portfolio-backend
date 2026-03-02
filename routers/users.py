@@ -66,7 +66,8 @@ async def upload_profile_pic(
     current_admin: models.Admin = Depends(auth.get_current_admin)
 ):
     # Ensure static/uploads exists
-    upload_dir = os.path.join("backend", "static", "uploads")
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    upload_dir = os.path.join(base_dir, "static", "uploads")
     if not os.path.exists(upload_dir):
         os.makedirs(upload_dir)
         
@@ -90,13 +91,14 @@ async def upload_resume(
     current_admin: models.Admin = Depends(auth.get_current_admin)
 ):
     # Ensure static/uploads exists
-    upload_dir = os.path.join("backend", "static", "uploads")
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    upload_dir = os.path.join(base_dir, "static", "uploads")
     if not os.path.exists(upload_dir):
         os.makedirs(upload_dir)
         
     # Delete old resume if it exists
     if current_admin.resume_url:
-        old_file_path = os.path.join("backend", current_admin.resume_url.lstrip("/"))
+        old_file_path = os.path.join(base_dir, current_admin.resume_url.lstrip("/"))
         if os.path.exists(old_file_path):
             try:
                 os.remove(old_file_path)

@@ -9,6 +9,9 @@ class Admin(Base):
     hashed_password = Column(String(255), nullable=False)
     full_name = Column(String(255), nullable=True)
     bio = Column(Text, nullable=True)
+    description = Column(Text, nullable=True)
+    linkedin_url = Column(String(500), nullable=True)
+    github_url = Column(String(500), nullable=True)
     profile_picture = Column(String(500), nullable=True)
     resume_url = Column(String(500), nullable=True)
 

@@ -7,6 +7,9 @@ class AdminBase(BaseModel):
     email: EmailStr
     full_name: Optional[str] = None
     bio: Optional[str] = None
+    description: Optional[str] = None
+    linkedin_url: Optional[str] = None
+    github_url: Optional[str] = None
     profile_picture: Optional[str] = None
 
 class AdminCreate(AdminBase):
@@ -19,6 +22,9 @@ class AdminLogin(BaseModel):
 class AdminUpdate(BaseModel):
     full_name: Optional[str] = None
     bio: Optional[str] = None
+    description: Optional[str] = None
+    linkedin_url: Optional[str] = None
+    github_url: Optional[str] = None
     profile_picture: Optional[str] = None
     resume_url: Optional[str] = None
     email: Optional[EmailStr] = None
